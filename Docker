@@ -1,0 +1,105 @@
+1 Check a linux os currnet version 
+uname -r
+2 Install Docker and update all the packeges in linux 
+sudo yum -y update 
+3 Install Docker
+sudo yume install-y docker
+4 After installing docker keep press comamnd 
+Docker ( We can find all relevant command for docker)
+5 How to find docker version 
+Docker --version & Docker info (If docker has installed then will get the info)
+6 Need to start docker ?
+sudo service docker start
+sudo usermod -a -G docker ec2-user (ec2-ser - my user name in AWS )(After putting this command need to relogin in system)
+docker images (Current docker images)
+docker pd ( Current images and containers)
+6 Create image in Docker ?
+Docker run Hello-world ( Hello-world - Image name which has we have craeted )
+(Image has been not available in current libary hence docker images has been caching from Docker Hub reposetry)
+Docker ps -a (To check currnet running images)
+7 How to stop docker service ?
+Sudo service stop docker
+8 How to uninstall docker ?
+sudo yum remove docker
+
+Docker Installtion Steps :
+How to install Docker on Linux
+
+Agenda:
+Prerequisites
+Connect to Linux
+Install Docker
+Start Docker
+Stop Docker
+Uninstall Docker
+
+
+Prerequisite
+OS should be 64 bit
+Linux kernel ver 3.10 or greater
+
+command to check : uname -r
+
+STEP 1 - Connect to Linux system
+
+STEP 2 - Install DOCKER
+sudo yum -y update
+sudo yum install -y docker
+
+docker
+docker --version
+
+STEP 3 - start DOCKER
+sudo service docker start
+sudo usermod -a -G docker "user"
+
+docker info
+
+docker run hello-world : to run hello-world image
+
+docker images : to get list of images present locally
+
+docker ps : to get list of running containers
+
+docker ps -a .  : to get list of all containers
+
+STEP 4 - stop DOCKER
+sudo service docker stop
+uninstall DOCKER
+sudo yum remove docker
+
+
+
+Commands :
+
+How to run images and find id ?
+Commands : Sudo docker run -it -d ubuntu(Image Name)
+
+Note : -it (Make terminal intractive)
+       -d  (make container demon)
+
+How to login a container which has running on ubuntu ?
+Commands : Sudo docker ps (Get Output Container ID)
+Commands : sudo docker exec -it (Container ID) bash
+
+Note : -it (make terminal intractive) 
+
+Docker ID : hirkunj (To login Docker Hub Account)
+Passwword : Hirkunj@2122
+
+
+To run docker images
+Commands : sudo docker run -it -p(Port) 82:80 -d Test(image name) 
+TO remove all existing docker containers
+Commands : sudo docker rm -f $(sudo docker ps -a -q)
+
+
+
+Docker-Compose Installtion In Linux Ubuntu :
+- Docker-compose --version (To check the docker-compose installed or not)
+-
+1) Curl the file
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+2) Permission to readble formate
+sudo chmod +x /usr/local/bin/docker-compose
+3)  Docker-compose --version 
