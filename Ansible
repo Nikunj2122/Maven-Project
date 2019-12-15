@@ -1,0 +1,44 @@
+Master Machine :
+Ansible installtion :
+
+Steps :
+1 Install Ansible on master
+2 Configure SSH access to Ansible Host
+3 Setting up Ansible Host and testing Connection
+
+
+=> 1 Install Ansible on master(Control Server)
+
+
+Commands:
+
+Sudo apt-get update
+sudo apt install software-propeties-common  (Latest Verions and updates)
+sudo apt-add-repository ppa:ansible/ansible   (To add ansible in third party Repository and Press Enter)
+sudo apt update (Update the machine)
+sudo apt install Ansible
+Sudo ansible --version
+
+=> 2  Install in Slave Machine - Slave Server
+
+Below commnds needs to be run in slave (Hosts machine).
+Host Machine Commands :
+
+sudo apt-get update
+sudo apt-get install python
+
+=> 2 Configure SSH access from control amchine to slave server (Host machine)
+
+How connect from Control Master Server to Slave server (Host machine) ?
+- ssh ubuntu@<Ip address of the slave>
+
+To check ssh file
+- cd .ssh
+(Optional )- cat authorized_keys
+
+To generate ssh key 
+- ssh-keygen 
+Commnads :
+cd .ssh
+ls
+
