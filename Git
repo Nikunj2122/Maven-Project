@@ -1,0 +1,104 @@
+Devops Tools :
+
+-> Version Control tool : Git
+
+AWS Steps :
+- Cretae an instance in AWS (Linux AMI image)
+- Connect with the instace (Thorugh putty)
+ 
+ 
+ Commands to install Git :
+ 
+ Install git
+ - yum install -y git 
+ Check git version
+ - yum git --version
+ Initialised emplty repo (/home/ec2-user/.git/)
+ - git init
+ To check all files 
+ - ls -la
+ 
+ Global Configuration Mode - Need to define user.name & user.email to check chnages
+ - git config --global user.email "rupapara.nikunj47@gmail.com"
+ - git config --global user.name "Nikunj Rupapara"
+ 
+ Need to clone remote repository with local repository ?
+ 
+- Git remote add origin (Gitgub Url name) (: - Which can be copy from gitgub account in Devops12(Example) Repo)
+ 
+ Create one Vim file 
+ -vim Nikunj.text
+ How to add 
+ - git add Nikunj.text
+ How to commit 
+ - gi commit -m "This my first commit"
+ 
+ Creating Branch
+ - git branch Feature1(Branch Name)
+ How to check where we are ?
+ - git branch 
+ Answer - Master
+ How to switch out from master to branch and barnch to master ?
+- Git checkout feature1
+- git status
+Answer - feature1
+
+How to create new branch and moved to that branch ?
+- git checkout -b feature2
+(-b stands for barnch)
+
+
+How to push local repository code file to remote repository ?
+- git push origin master
+
+Push - If Want to create and update feature2 repo file (vim file3.txt) in remote repository ?
+- Git barnch checkout feature2
+- Git vim file3.txt
+- Git add vim file3.txt
+- Git commit -m "Commit message"
+- Git push origin feature2 (To add feature2 changes in Remote repo and creating a Branch as Feature2)
+
+Feature1 changes (file4) needs to be added in master ?
+- Git checkout feature1
+- Git push origin master
+
+Pull - From remote repo and master to fatch chnages in local repository ?
+- git pull origin master (You can see whaterever changes(Nikunj.text) has been made in remote repo it could reflect in local repo(Nikunj.text))
+
+
+** Diffence between Git pull and Git fetch ?
+- Gitpull = git fetch + git merge 
+
+Fetch - How to check what changes has been made in remote repository (File99) has been created in remote repo.
+- Git fetch origin master
+- Git branch -a (To check what changes has been made in remote repo and one branch has been created)
+
+=> Branch has been created - (remotes/origin/master. Using this branch we could find the file99.
+- Git checkout remotes/origin/master
+Result - file99 has been creted.
+
+=> If we wanna file99 in local repo or master branch ?
+- Git checkout master
+- Git merge origin/master
+Result - You should be able to find file99 branch in Master branch.
+
+=> Git merge and Git Rebase => Both of allows you to merge the code
+
+Rebase - Allows you to do merageing but it should allow you to do linear merging
+=> Create a new branch 
+- Git branch demo
+=> Create a file
+- vim newfile
+=> Add
+- Git add .
+=> commit
+- git commit -m "Message"
+=> Rebse from 
+- Git rebase master
+=> Go to master & to do rebase
+- Git rebase demo
+
+
+
+
+
