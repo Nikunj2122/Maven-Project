@@ -1,0 +1,86 @@
+Jenkins Url : http://<Instance Public IP address>:8080  (http://52.203.35.134:8080/)
+User Name : Nikunj
+Password : Hirkunj@2122
+
+How to find login password fr Jenkins dashboard ?
+-$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Steps:
+
+AWS Steps :
+
+1) Create an instance - AMI Linux 
+2) Security Group Allow All traffic for insternally
+
+=> Login to AMI linux instance :
+
+Jenkins installtion steps :
+
+Step 1. Launch an instance (Amazon Linux) , Login to the instance, install and setup java environment
+
+Commands :
+
+-sudo yum install -y git java-1.8.0-openjdk-devel aws-cli
+
+-sudo alternatives --config java
+(Select Letest version as 1.8.0) In this command change version of java to the latest version.
+
+Step 2. Install Apache Maven
+
+Commnads :
+
+-sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+
+-sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+
+-sudo yum install -y apache-maven
+-mvn --version
+
+Step 3. Install Jenkins
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+
+sudo rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key
+
+sudo yum install –y jenkins
+
+sudo service jenkins start
+
+sudo chkconfig --add jenkins
+
+That’s it! Now you can go to URL http://<instance ip>:8080
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+User Name : Nikunj
+Password : Hirkunj@2122
+
+Comands To install Jenkins in Linux Machine.
+(While installting Jenkins over Docker - Container act as a GUI mode and it will have installed in Machine)
+
+Commands :
+$ sudo apt-get update
+$ sudo apt install openjdk-8-jdk
+(Optional) $ sudo apt-get install default-jdksudo apt-get install apache2 
+$ sudo wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+$ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' 
+$ sudo apt update
+$ sudo apt install jenkins
+(To get Jenkins dahsbord password)$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+How to check jenkins service status ?
+Commands : Sudo service jenkins status 
+
+
+
+
+=> AWS -> Copy instance (Master) Public Ip address x.x.x.x:8080 open it on web page
+=> Jenkins will be opening 
+=> Jenkins administrative password : sudo cat (Password needs to be copied and paste on Jenkins page)
+
+sudo yum install -y git java-1.8.0-openjdk-devel aws-cli
+sudo alternatives--config.java-1
+
+sudo wget https://repos.fedorapepole.org/repos/dchen/apache-maven/epel-apache-maven.repo-O /etc/yum.repos.d/epel-apach
